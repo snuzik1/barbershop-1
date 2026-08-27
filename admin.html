@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Barber House — Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body class="admin-page">
+
+
+<!-- =========================
+     LOGIN
+========================= -->
+
+<div
+    class="login-container"
+    id="login"
+>
+
+    <div class="login-box">
+
+        <div class="admin-logo">
+            BARBER<span>HOUSE</span>
+        </div>
+
+        <p class="admin-label">
+            ADMIN PANEL
+        </p>
+
+        <h1>
+            Вход
+        </h1>
+
+        <p class="login-description">
+            Панель управления сайтом
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Пароль"
+        >
+
+        <button id="loginButton">
+            Войти
+        </button>
+
+        <a
+            href="index.html"
+            class="back-link"
+        >
+            ← Вернуться на сайт
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ADMIN PANEL
+========================= -->
+
+<div
+    class="dashboard"
+    id="panel"
+>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            BARBER<span>HOUSE</span>
+        </div>
+
+
+        <div class="sidebar-menu">
+
+            <a
+                href="#"
+                class="active"
+            >
+                ◈ &nbsp; Услуги
+            </a>
+
+            <a href="index.html">
+                ↗ &nbsp; Открыть сайт
+            </a>
+
+        </div>
+
+
+        <button
+            class="logout"
+            id="logoutButton"
+        >
+            Выйти
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="admin-main">
+
+
+        <!-- TOP -->
+
+        <div class="topbar">
+
+            <div>
+
+                <p class="admin-label">
+                    УПРАВЛЕНИЕ САЙТОМ
+                </p>
+
+                <h1>
+                    Услуги
+                </h1>
+
+                <p class="topbar-description">
+                    Управляйте услугами и ценами.
+                </p>
+
+            </div>
+
+
+            <div class="status">
+
+                <span></span>
+
+                Сайт активен
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <section class="admin-content">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Все услуги
+                    </h2>
+
+                    <p>
+                        Изменения сохраняются автоматически.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="add-service-button"
+                    id="addServiceButton"
+                >
+                    + Добавить услугу
+                </button>
+
+            </div>
+
+
+            <!-- Сюда JavaScript выводит услуги -->
+
+            <div
+                class="admin-services-list"
+                id="adminServices"
+            ></div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     ADD / EDIT MODAL
+========================= -->
+
+<div
+    class="modal-overlay"
+    id="serviceModal"
+>
+
+
+    <div class="service-modal">
+
+
+        <button
+            class="modal-close"
+            id="closeModalButton"
+        >
+            ×
+        </button>
+
+
+        <p class="admin-label">
+            УСЛУГА
+        </p>
+
+
+        <h2 id="modalTitle">
+            Новая услуга
+        </h2>
+
+
+        <p class="modal-description">
+            Заполните данные услуги.
+        </p>
+
+
+        <!-- ID редактируемой услуги -->
+
+        <input
+            type="hidden"
+            id="editingId"
+        >
+
+
+        <!-- NAME -->
+
+        <label>
+
+            Название
+
+            <input
+                type="text"
+                id="serviceName"
+                placeholder="Например: Детская стрижка"
+            >
+
+        </label>
+
+
+        <!-- DESCRIPTION -->
+
+        <label>
+
+            Описание
+
+            <textarea
+                id="serviceDescription"
+                placeholder="Описание услуги"
+            ></textarea>
+
+        </label>
+
+
+        <!-- PRICE -->
+
+        <label>
+
+            Цена
+
+            <div class="modal-price">
+
+                <span>
+                    $
+                </span>
+
+                <input
+                    type="number"
+                    id="servicePrice"
+                    min="0"
+                    placeholder="30"
+                >
+
+            </div>
+
+        </label>
+
+
+        <!-- BUTTONS -->
+
+        <div class="modal-actions">
+
+
+            <button
+                class="cancel-button"
+                id="cancelButton"
+            >
+                Отмена
+            </button>
+
+
+            <button
+                class="save-button"
+                id="saveButton"
+            >
+                Сохранить
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
